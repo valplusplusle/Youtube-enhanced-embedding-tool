@@ -1,0 +1,51 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    	
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+		<script language="JavaScript">
+			function input (form) {
+				
+			    var Link = form.link.value;
+			    
+			    var firstOption = "?";
+			    var nextOption = "&";
+			    var optionAutoplay = "autoplay=1";
+			    var optionLoop = "loop=1";
+			    var optionVideoinfo = "showinfo=0";
+			    
+			    document.getElementById("output").innerHTML = "<p class='list-group-item'>"+ Link + firstOption + optionAutoplay + nextOption + optionLoop + nextOption + optionVideoinfo +"</p>"; 
+			}
+		</script>
+		
+	</head>
+	<body>
+		<div class="container">
+			
+			<nav aria-label="breadcrumb">
+			  <ol class="breadcrumb">
+			    <li class="breadcrumb-item"><a href="index.php">Generate</a></li>
+			    <li class="breadcrumb-item"><a href="#">Others</a></li>
+			    <li class="breadcrumb-item"><a href="#">GitHub</a></li>
+			  </ol>
+			</nav>
+
+			<form name="inputform" action="" method="GET">
+				<p> Youtube Link:	<input class="form-control" type="text" name="link" value="">	</p>
+				<p>			<input class="btn btn-dark btn-lg btn-block" type="button" name="button" value="Generate" onClick="input(this.form)"></p>
+			</form>
+			
+			<div id="output"></div>
+			
+		</div>
+	
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+	
+	</body>
+</html>
