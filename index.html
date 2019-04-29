@@ -10,14 +10,20 @@
 			function input (form) {
 				
 			    var Link = form.link.value;
-			    
+			    var LinkYTKey = Link.split('=')[1];
 			    var firstOption = "?";
 			    var nextOption = "&";
 			    var optionAutoplay = "autoplay=1";
 			    var optionLoop = "loop=1";
 			    var optionVideoinfo = "showinfo=0";
+			    var iframe = "<iframe width='560' height='315' src='https://www.youtube.com/embed/";
+			    var iframeoptions = "' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>";
 			    
-			    document.getElementById("output").innerHTML = "<p class='list-group-item'>"+ Link + firstOption + optionAutoplay + nextOption + optionLoop + nextOption + optionVideoinfo +"</p>"; 
+			    var text = iframe + LinkYTKey + firstOption + optionAutoplay + nextOption + optionLoop + nextOption + optionVideoinfo + iframeoptions;
+			    
+			    document.getElementById("output").innerText = text
+			    document.getElementById("outputvideo").innerHTML = text
+			   
 			}
 		</script>
 		
@@ -35,11 +41,11 @@
 
 			<form name="inputform" action="" method="GET">
 				<p> Youtube Link:	<input class="form-control" type="text" name="link" value="">	</p>
-				<p>			<input class="btn btn-dark btn-lg btn-block" type="button" name="button" value="Generate" onClick="input(this.form)"></p>
+				<p>					<input class="btn btn-dark btn-lg btn-block" type="button" name="button" value="Generate" onClick="input(this.form)"></p>
 			</form>
 			
-			<div id="output"></div>
-			
+			<div id="output" class='list-group-item'></div>
+			<div id="outputvideo" class='list-group-item'></div>
 		</div>
 	
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
