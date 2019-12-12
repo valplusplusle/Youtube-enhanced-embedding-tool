@@ -6,30 +6,7 @@
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
-		<script language="JavaScript">
-			function input (form) {
-				
-			    var Link = form.link.value;
-			    var LinkYTKey = Link.split('=')[1];
-			    var firstOption = "?";
-			    var nextOption = "&";
-			    var optionAutoplay = "";
-			    var optionLoop = "loop=1";
-			    var optionVideoinfo = "showinfo=0";
-			    var iframe = "<iframe width='560' height='315' src='https://www.youtube.com/embed/";
-			    var iframeoptions = "' frameborder='0' allowfullscreen></iframe>";
-			    
-			    if(document.getElementById("autoplay").checked) {optionAutoplay = "autoplay=1";} else {optionAutoplay = "autoplay=0";}
-			    if(document.getElementById("loop").checked) {optionLoop = "loop=1";} else {optionLoop = "loop=0";}
-			    if(document.getElementById("showinfo").checked) {optionVideoinfo = "showinfo=1";} else {optionVideoinfo = "showinfo=0";}
-			    
-			    var text = iframe + LinkYTKey + firstOption + optionAutoplay + nextOption + optionLoop + nextOption + optionVideoinfo + iframeoptions;
-			    
-			    document.getElementById("output").innerText = text
-			    document.getElementById("outputvideo").innerHTML = text
-			   
-			}
-		</script>
+		<script src="linkGenerator.js"></script>
 		
 	</head>
 	<body>
@@ -43,10 +20,14 @@
 			</nav>
 
 			<form name="inputform" action="" method="GET">
-				<p class="list-group-item"> Youtube Link:	<input class="form-control" type="text"     name="link" value="">	</p>
+				<p class="list-group-item"> Youtube Link:				<input class="form-control" type="text"     name="link" value="">	</p>
 				<p class="list-group-item">	Automatische Wiedergabe:	<label class="btn btn-primary float-right"><input id ="autoplay" type="checkbox" name="test" value=""></label>   </p>
 				<p class="list-group-item">	Wiederholung:				<label class="btn btn-primary float-right"><input id ="loop" type="checkbox" name="test" value=""></label>   </p>
 				<p class="list-group-item">	Titel Anzeigen:				<label class="btn btn-primary float-right"><input id ="showinfo" type="checkbox" name="test" value=""></label>   </p>
+				<p class="list-group-item">	Vorgeschlagene Videos:		<label class="btn btn-primary float-right"><input id ="showvideos" type="checkbox" name="test" value=""></label>   </p>
+				<p class="list-group-item">	Steuerung:					<label class="btn btn-primary float-right"><input id ="showcontrols" type="checkbox" name="test" value=""></label>   </p>
+				<p class="list-group-item">	Autohide:					<label class="btn btn-primary float-right"><input id ="autohide" type="checkbox" name="test" value=""></label>   </p>
+				<p class="list-group-item">	Modestbranding:				<label class="btn btn-primary float-right"><input id ="modestbranding" type="checkbox" name="test" value=""></label>   </p>
 				<p>					<input class="btn btn-dark btn-lg btn-block" type="button" name="button" value="Generate" onClick="input(this.form)"></p>
 			</form>
 			
